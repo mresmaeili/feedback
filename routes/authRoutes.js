@@ -8,6 +8,13 @@ module.exports = app => {
     })
   );
 
+  // app.get(
+  //   '/auth/linkedin',
+  //   passport.authenticate('linkedin', {
+  //     scope: ['r_emailaddress', 'r_basicprofile']
+  //   })
+  // );
+
   app.get(
     '/auth/google/callback',
     passport.authenticate('google'),
@@ -15,6 +22,21 @@ module.exports = app => {
       res.redirect('/surveys');
     }
   );
+
+  // app.get(
+  //   '/auth/linkedin/callback',
+  //   passport.authenticate('linkedin', {
+  //     successRedirect: '/surveys',
+  //     failureRedirect: '/'
+  //   })
+  // );
+  // app.get(
+  //   '/auth/linkedin/callback',
+  //   passport.authenticate('linkedin'),
+  //   (req, res) => {
+  //     res.redirect('/surveys');
+  //   }
+  // );
 
   app.get('/api/logout', (req, res) => {
     req.logout();
