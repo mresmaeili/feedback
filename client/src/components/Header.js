@@ -40,7 +40,7 @@ class Header extends Component {
                 className="left brand-logo"
                 style={{ paddingLeft: 12 }}
               >
-                Feedback Maker
+                Feedback Creator
               </Link>
               <ul id="nav-mobile" className="right">
                 {this.renderLogin()}
